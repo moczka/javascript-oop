@@ -1,0 +1,42 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+           
+}
+
+main{
+    max-width: 800px;
+    margin: 20px auto;
+    
+}
+
+.btn-run{
+    display: inline-block;
+    color: #fff;
+    background: #00cc00;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 1.0em;
+    margin: 5px;
+}
+
+.btn-run:hover{
+    background: #00e600;   
+    
+}
+
+.btn-run:disabled{
+    background: #ff471a;   
+    
+}
+
+
+.output{
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    
+}
