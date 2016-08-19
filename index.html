@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
-<head>
-    <meta http-equiv="X-UA-Compatible" value="IE=edge">
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" value="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" href="main.css" />
@@ -9,12 +9,26 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <main>
+    <header>
+    
+    <h1>JavaScript OOP</h1>
+    
+    </header>
+    
+    
+    <main class="wrapper">
+    
+    <p>A series of JavaScript Object oriented programming examples and practice problems to master the concept behind prototypal inheritance, the classical model and the important call() and apply() methods.</p>
         
-        <button class="btn-run" id="sample1" >Run 1</button>
-        <button class="btn-run" id="sample2" >Run 2</button>
-        <button class="btn-run" id="sample3" >Run 3</button>
-        <button class="btn-run" id="sample4" >Run 4</button>
+    <select name="problems" class="options" id="examplePicker">
+         <option value="example1">Prototype</option>
+         <option value="example2">Classical Model</option>
+         <option value="example3">Bind Method</option>
+         <option value="example4">Call Method</option>
+    </select>
+
+    <button class="btn-run" id="runButton" >Run</button>
+
         
     <div class="output" id="output1">
         Output....
