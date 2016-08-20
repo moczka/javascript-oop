@@ -42,35 +42,79 @@ function initApp(){
     
     function exampleOne(){
         
-        function Vehicle(numWheels, material, engine){
-            this.wheels = numWheels || 4;
-            this.material = material || 'steel';
-            this.engine = engine || 'farts';
+        
+        
+        function inheritProto(childObject, parentObject){
+            
+            var copyOfParent = Object.create(parentObject.prototype);
+            
+            
+            copyOfParent.constructor = childObject;
+            
+            childObject.prototype = copyOfParent;
+            
+                
+            
         }
+        
+
+        
+        
+        function Vehicle(model, make, year){
+            this.wheels = 4;
+            this.material = 'steel';
+            this.engine = 'gas';
+            this.running = false;
+            this.x = 0;
+            this.y = 0;
+            this.model = model;
+            this.make = make;
+            this.year = year;
+        }
+        
+        
+        Vehicle.prototype.running = false;
+        
+        Vehicle.prototype.drive = function(){
+                this.running = true;  
+                this.x += 20;
+                this.y += 20;
+                console.log('My new location is x: '+this.x + ' y: '+this.y);
+            }
                 
         function Car(model, make, year){
-            Vehicle.call(this);
-            this.engine = 'gas';
-            this.model = model || 'altima';
-            this.make = make || 'nissan';
-            this.year = year || 2001;        
+            
+            //Vehicle.call(this, model, make, year);
+            this.wheels = 4;
+            
         }
         
-        Car.prototype = new Vehicle();
+        function Moto(model, make, year){
+               
+            //Vehicle.call(this, model, make, year);
+            this.wheels = 2;
+            
+        }
         
-        var myCar = new Car('malibu', 'chevy', 2006);
-        var hisCar = new Car('altima', 'nissan', 2001);
+
+        inheritProto(Car, Vehicle);
+        inheritProto(Moto, Vehicle);
         
         
+        var myCar = new Car('altima', 'nissan', 2001);
+        var myMoto = new Moto('scooter', 'susuki', 2000);
         
         console.log(myCar);
-        console.log(myCar.engine);
+        console.log(myMoto);
         
-    
-       
+        myCar.drive();
         
-        console.log(hisCar);
-        console.log(hisCar.engine);
+        console.log('Is my car Driving? ' + myCar.running);
+        console.log('Is my moto driving? ' + myMoto.running);
+        
+        
+        
+        
         
     }
     
