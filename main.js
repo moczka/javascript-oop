@@ -120,10 +120,53 @@ function initApp(){
     
     function exampleTwo(){
         
-        alert('Youre running example 2');
-        
-        
-        //end of example 1
+        function Plant(){
+                        this.type = "None";
+                    this.size = 0;
+                    this.die = function(){
+                            this.size = -1;
+
+                    }
+                }
+
+
+                Plant.prototype.grow = function(){
+                    this.size += 5;
+
+                }
+
+                function Tree(){
+                    this.name = "Tree Name";
+                  //do not forget to make the call so the properties as added to each instance of this constructor.
+                  Plant.call(this);
+
+                }
+
+                console.log('The prototype of plant is as follows: ');
+                console.log(Plant.prototype);
+
+                console.log('The prototype of Tree is as follows: ');
+                console.log(Tree.prototype);
+
+
+                //create a copy of the parent class prototype
+                var copyOfParent = Object.create(Plant.prototype);
+                //since the copy of the parent prototype has the parent function as the constructor, set it to be the future child class function constructor
+                copyOfParent.constructor = Tree;
+                //override the child class prototype with the copy of the parent class which binds the prototype of the parent class with the only different that the constructor is the child class itself.
+                Tree.prototype = copyOfParent;
+
+
+
+                var mapleTree = new Tree();
+                var bridgeMaple = new Tree();
+
+                console.log(mapleTree);
+                console.log(mapleTree.name);
+
+                console.log(bridgeMaple);
+
+                        //end of example 1
        
         
     }

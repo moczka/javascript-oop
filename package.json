@@ -1,0 +1,29 @@
+{
+  "name": "javascript-oop",
+  "version": "1.0.0",
+  "description": "Exploring the true OOP power of JavaScript and getting to know the inner workings on stampit lib by Eric Elliot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moczka/javascript-oop.git"
+  },
+  "keywords": [
+    "javascript",
+    "oop",
+    "stampit",
+    "prototype",
+    "inheritance"
+  ],
+  "author": "Javier S Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moczka/javascript-oop/issues"
+  },
+  "homepage": "https://github.com/moczka/javascript-oop#readme",
+  "dependencies": {
+    "stampit": "^3.1.1"
+  }
+}
